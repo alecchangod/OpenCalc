@@ -1,0 +1,37 @@
+android_app {
+    name: "OpenCalc",
+    product_specific: true,
+    manifest: "AndroidManifest.xml",
+    resource_dirs: ["res"],
+    
+    srcs: [
+        "java/**/*.java",
+        "java/**/*.kt",
+        "java/**/*.aidl",
+    ],
+    aidl: {
+        local_include_dirs: ["java"],
+    },
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.appcompat_appcompat",
+        "androidx.preference_preference-ktx",
+        "androidx.constraintlayout_constraintlayout",
+        "com.google.android.material_material",
+        "androidx.lifecycle_lifecycle-viewmodel-ktx",
+        "com.github.hannesa2_AndroidSlidingUpPanel",
+        "androidx.preference_preference",
+        "junit_junit",
+        "androidx.test.ext_junit",
+        "androidx.test.espresso_espresso-core",
+        "com.google.code.gson_gson"
+    ],
+    kotlincflags: [
+        "-Xuse-experimental=kotlin.Experimental",
+        "-Xuse-experimental=kotlin.ExperimentalStdlibApi",
+    ],
+    plugins: [
+        "dagger2-compiler",
+    ],
+
+}
